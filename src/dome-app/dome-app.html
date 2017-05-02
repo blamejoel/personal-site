@@ -16,24 +16,14 @@
         --dome-font-color-light: rgba(255,255,255,0.8);
         --dome-avatar-size: 200px;
         /*--dome-avatar-border-color: rgba(0,0,0,0.2);*/
-        --dome-avatar-bg: none;
+        /*--dome-avatar-bg: none;*/
         --dome-social-size: 40px;
-        /*--dome-social-size: 36px;*/
         --dome-social-border: none;
         --social-badge-margin: 5px;
         display: block;
         font-size: 16px;
         font-family: Tahoma, Geneva, sans-serif;
         color: var(--dome-font-color)
-      }
-      a {
-        text-decoration: none;
-        font-size: inherit;
-        color: var(--dome-font-color);
-        transition: ease 0.2s;
-      }
-      a:hover {
-        opacity: 0.7;
       }
       .header-text {
         @apply(--layout-vertical);
@@ -78,9 +68,6 @@
         padding: 0 16px;
         text-align: center;
       }
-      section {
-        padding: 28px 20px;
-      }
       footer {
         padding: 10px 16px; 
         height: 45px;
@@ -109,44 +96,14 @@
       footer dome-social {
         margin: 0 5px;
       }
-      .container {
-        @apply(--layout-vertical);
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      .container > * {
-        @apply(--layout-flex);
-      }
-      .container p {
-        line-height: 1.5;
-      }
-      .container p a {
-        font-weight: 600;
-        text-decoration: underline;
-      }
-      .container div > ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        list-style-type: none;
-        margin: 0;
-        padding: 0 10px;
-      }
-      .container div > ul > li {
-        line-height: 1.5;
-        padding: 10px 0;
-      }
-      .container div > ul > li > ul {
-        font-size: 0.9em;
-        padding-left: 20px;
-      }
       .badges {
         @apply(--layout-horizontal);
         @apply(--layout-center-center);
         /*padding: 10px;*/
       }
       div.avatar {
-        padding-top: 80px;
+        /*padding-top: 120px;*/
+        padding-top: calc(100vh - 600px);
       }
       dome-avatar {
         @apply(--layout-horizontal);
@@ -156,9 +113,19 @@
         margin-left: var(--social-badge-margin);
         margin-right: var(--social-badge-margin);
       }
-      @media (max-width: 600px) {
-        .container {
-          @apply(--layout-vertical);
+      @media screen and (max-width: 329px) {
+        :host {
+          --dome-avatar-size: 180px;
+          --dome-social-size: 36px;
+        }
+        div.avatar {
+          padding-top: 120px;
+        }
+        .header-text h2 {
+          font-size: 2.4em;
+        }
+        .header-text p {
+          font-size: 1.4em;
         }
       }
     </style>
@@ -174,11 +141,11 @@
           <!--   <a href="#">projects</a> -->
           <!-- </div> -->
       <div class="badges">
+        <dome-social hero-img="/images/pgp.png" url="/jgome043.pub" 
+          desc="PGP Key"></dome-social>
         <dome-social hero-img="/images/email.png" url="mailto:joel@joelgomez.me" 
           desc="email me!"></dome-social>
-        <!-- <dome-social hero-img="/images/resume.png" --> 
-        <!--   url="#" desc="View Resume"></dome-social> -->
-       <dome-social hero-img="/images/github.png" 
+        <dome-social hero-img="/images/github.png" 
           url="https://github.com/jgome043" desc="Github/jgome043"></dome-social>
         <dome-social hero-img="/images/linkedin.png" 
           url="https://linkedin.com/in/joelgomez3" desc="Linkedin/in/joelgomez3"></dome-social>
@@ -202,173 +169,13 @@
       <header>
       </header>
 
-      <section>
-        <div class="container">
-          <h2>hi.</h2>
-          <p>
-          I'm Joel, a Southern California native, active tech enthusiast, and
-          computer science student at the University of California, Riverside.
-          </p>
-          <p>
-          In my spare time, I volunteer my time and experience to host technical 
-          workshops on topics that I'm passionate about including embedded
-          systems and <a href="https://goo.gl/TdR7C0">Internet of Things</a>, 
-          with a Car Hacking workshop planned for later this year.
-          </p>
-          <p>
-          I love tech, but I'm also a fan of woodworking and
-          fabrication--there's something of an art to expressing creativity
-          through building that I'm addicted to!
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2>tech.</h2>
-          <p>
-          Throughout my endeavors, I've become familiar with a variety of
-          programming languages and technologies including:
-          </p>
-          <div>
-            <ul>
-              <li>Software development
-                <ul>
-                  <li>Linux Systems Administration</li>
-                  <li>Bash/shell scripting</li>
-                  <li>Vim</li>
-                  <li>Git</li>
-                  <li>Python</li>
-                  <li>C++/C</li>
-                  <li>Java/Android (some experience)</li>
-                  <li>LaTeX</li>
-                </ul>
-              </li>
-              <li>Web development 
-                <ul>
-                  <li>Full Stack with LAMP</li>
-                  <li>Javascript/jQuery</li>
-                  <li>Progressive Web Apps
-                    <ul>
-                      <li>PolymerJS</li>
-                      <li>Service Workers</li>
-                    </ul>
-                  </li>
-                  <li>Node.js (some experience)</li>
-                </ul>
-              </li>
-              <li>Embedded development
-                <ul>
-                  <li>AVR</li>
-                  <li>Raspberry Pi</li>
-                  <li>Arduino</li>
-                  <li>FreeRTOS (some experience)</li>
-                  <li>Atmel Studio</li>
-                  <li>CAN</li>
-                  <li>USART, SPI</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2>more.</h2>
-          <p>
-          I've had a fascination with electronics as far back as I can remember.
-          As a little boy, I was especially drawn to anything with flashing
-          lights and sounds or anything that was remote-controlled. My favorite
-          movies growing up were the Back the Future trilogy, Short Circuit, and
-          pretty much anything with techy gadgets and robots.
-          </p>
-          <p>
-          My interest shifted to computers around junior high when my parents
-          brought home a desktop PC for my older sister and me. My curiosity
-          guided me along an accelerated learning curve as I stayed up for hours
-          trying to fix whatever damage I had done as a result of poking around
-          in system files and registry settings before anyone would notice.
-          </p>
-          <h4>Automotive Industry</h4>
-          <p>
-          Towards the end of high school and for a few years thereafter, I
-          became obsessed with car electronics and developed a career as an
-          automotive electronics technician. In this industry, I held positions 
-          as an installation technician, technical trainer, and leadership roles 
-          including lead technician and department supervisor. During my career
-          in mobile electronics, I self-studied and became certified as a MECP
-          (Mobile Electronics Certified Professional) Master certified technician 
-          and an ASE (Automotive Service Excellence) A6 certified technician. In 
-          addition, I was also invited by the Consumer Technology Association
-          (Formally Consumer Electronics Association) to be a contributing
-          member to the MECP program as a contributing author to the MECP
-          Advanced and MECP Master study guides and accompanying professional 
-          certification exams. 
-          </p>
-          <h4>University of California, Riverside</h4>
-          <p>
-          Today, I continue to challenge myself through my studies as an
-          undergraduate at UCR in the field of computer science while staying up
-          to date on emerging consumer technology.
-          </p>
-          <p>
-          Student Organizations:
-          </p>
-          <div>
-            <ul>
-              <li>IEEE
-                <ul>
-                  <li>2017 Projects Manager</li>
-                  <li>Internet of Things Workshops (Spring 2017)</li>
-                  <li>Raspberry Pi Workshops (Winter 2017)</li>
-                </ul>
-              </li>
-              <li>ACM
-                <ul>
-                  <li>2016 Citrus Hack Sponsorship Committee</li>
-                  <li>2016 Hack Night Coordinator</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <p>
-          Some of the relevant coursework I've completed includes:
-          </p>
-          <div>
-            <ul>
-              <li>Computer Science Upper Division
-                <ul>
-                  <li>CS100 - Software Construction</li>
-                  <li>CS111 - Discrete Structures</li>
-                  <li>CS141 - Intermediate Data Structures & Algorithms</li>
-                  <li>CS150 - The Theory of Automata and Formal Languages</li>
-                  <li>CS153 - Design of Operating Systems</li>
-                  <li>CS161 - Design & Architecture of Computer Systems</li>
-                  <li>CS120A - Logic Design</li>
-                  <li>CS120B - Introduction to Embedded Systems</li>
-                  <li>CS122A - Intermediate Embedded & Real-Time Systems</li>
-                  <li>CS170 - Introduction to Artificial Intelligence</li>
-                  <li>CS190 - Entrepreneurship in Computing</li>
-                </ul>
-              </li>
-              <li>Other
-                <ul>
-                  <li>ENGR101I - Professional Development and Mentoring in Computer 
-                    Science</li>
-                  <li>ENGR180W - Technical Communications</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    <content></content>
 
     </app-header-layout>
     <footer>
       <div class="credit">
         <p>Designed and developed by 
-        <a href="https://blamejoel.com">Joel Gomez</a> <br>with 
+        <a href="http://blamejoel.com">Joel Gomez</a> <br>with 
         <a href="https://www.polymer-project.org">Polymer</a>
          <!-- and <a href="https://gohugo.io" target="_blank">Hugo</a> -->
         .</p>

@@ -1,0 +1,17 @@
+{
+  "entrypoint": "index.html",
+  "sources": [
+    "src/**/*",
+    "images/**/*",
+    "manifest.json",
+    "favicon.ico",
+    "browserconfig.xml",
+    "jgome043.pub"
+
+  ],
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+
+  ]
+
+}
