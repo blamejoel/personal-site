@@ -1,0 +1,61 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="dome-social">
+  <template>
+    <style>
+      :host {
+        --bg: var(--dome-theme-primary, rgba(0,0,0,1.0));
+        --img-size: var(--dome-social-size, 80px);
+        --border-color: rgba(0,0,0,0.8);
+        --border: 1px solid var(--dome-social-border-color, var(--border-color));
+      } 
+      .container {
+        background-color: var(--dome-social-bg, var(--bg));
+        width: var(--img-size);
+        height: var(--img-size);
+        overflow: hidden;
+        border: var(--dome-social-border, --border);
+        border-radius: 50%;
+        margin: 2px;
+        transition: ease 0.2s;
+      }
+      .container:hover {
+        opacity: 0.8;
+      }
+      iron-image {
+        width: var(--img-size);
+        height: var(--img-size);
+      }
+    </style>
+    <a href="[[url]]" title$="[[desc]]" target="_blank">
+      <div class="container">
+        <iron-image src="[[heroImg]]" sizing="contain" fade alt$="[[desc]]">
+        </iron-image>
+      </div>
+    </a>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'dome-social',
+
+      properties: {
+        heroImg: {
+          type: String,
+          value: '../../src/dome-social/img.png',
+        },
+        url: {
+          type: String,
+          value: '#',
+        },
+        desc: {
+          type: String,
+          value: '',
+        },
+      },
+    });
+  </script>
+</dom-module>
+

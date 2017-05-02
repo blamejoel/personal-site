@@ -1,0 +1,46 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="dome-avatar">
+  <template>
+    <style>
+      :host {
+        --bg: var(--dome-theme-primary, rgba(255,255,255,0.4));
+        --img-size: var(--dome-avatar-size, 150px);
+        --border-color: var(--dome-avatar-border-color, var(--bg));
+        --border-size: var(--dome-avatar-border-size, 6px);
+        --border: var(--border-size) solid var(--dome-avatar-border-color, var(--border-color));
+      } 
+      .container {
+        background-color: var(--dome-avatar-bg, var(--bg));
+        width: var(--img-size);
+        height: var(--img-size);
+        overflow: hidden;
+        border: var(--dome-avatar-border, --border);
+        border-radius: 50%;
+      }
+      iron-image {
+        width: var(--img-size);
+        height: var(--img-size);
+        z-index: -1;
+      }
+    </style>
+    <div class="container">
+      <iron-image src="[[heroImg]]" sizing="contain" fade></iron-image>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'dome-avatar',
+
+      properties: {
+        heroImg: {
+          type: String,
+          value: '../../src/dome-avatar/avatar.png',
+        },
+      },
+    });
+  </script>
+</dom-module>

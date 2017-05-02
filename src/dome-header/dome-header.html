@@ -1,0 +1,75 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../dome-avatar/dome-avatar.html">
+<link rel="import" href="../dome-social/dome-social.html">
+
+<dom-module id="dome-header">
+  <template>
+    <style>
+      :host {
+        --font-color: var(--dome-font-color, rgba(255,255,255,0.8));
+        --dome-avatar-size: 200px;
+        --dome-avatar-border-color: rgba(255,255,255,0.8);
+        --dome-social-size: 40px;
+        --dome-social-border: none;
+        --social-badge-margin: 5px;
+      } 
+      h2 {
+        font-size: 2.6em;
+        font-weight: 300;
+        margin: 0;
+      }
+      p {
+        font-size: 1.6em;
+        margin: 10px 0;
+      }
+      .badges {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+        padding: 10px;
+      }
+      dome-avatar {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+      }
+      dome-social {
+        margin-left: var(--social-badge-margin);
+        margin-right: var(--social-badge-margin);
+      }
+    </style>
+
+    <!-- <dome-avatar hero-img="/images/thinker_small.jpg"></dome-avatar> -->
+    <dome-avatar hero-img="/images/dohmez-round.png"></dome-avatar>
+    <!-- <dome-avatar hero-img="/images/avatar-pro.jpg"></dome-avatar> -->
+
+    <!-- <div class="badges"> -->
+    <!--   <dome-social hero-img="/images/email.png" url="mailto:joel@joelgomez.me" --> 
+    <!--     desc="email me!"></dome-social> -->
+      <!-- <dome-social hero-img="/images/resume.png" --> 
+      <!--   url="#" desc="View Resume"></dome-social> -->
+     <!-- <dome-social hero-img="/images/github.png" --> 
+     <!--    url="https://github.com/jgome043" desc="Github/jgome043"></dome-social> -->
+     <!--  <dome-social hero-img="/images/linkedin.png" --> 
+     <!--    url="https://linkedin.com/in/joelgomez3" desc="Linkedin/in/joelgomez3"></dome-social> -->
+     <!--  <dome-social hero-img="/images/thingiverse.png" --> 
+     <!--    url="https://thingiverse.com/jgome043" desc="Thingiverse/jgome043"></dome-social> -->
+     <!--  <dome-social hero-img="/images/twitter.png" --> 
+     <!--    url="https://twitter.com/dohmez" desc="Twitter @dohmez"></dome-social> -->
+    <!-- </div> -->
+    <!-- <h2>Joel Gomez</h2> -->
+    <!-- <p>developer, tinkerer, tech enthusiest.</p> -->
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'dome-header',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'avatar.jpg',
+        },
+      },
+    });
+  </script>
+</dom-module>
